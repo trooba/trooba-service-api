@@ -1,49 +1,3 @@
-# trooba-service-api
-
-This module is not an implementation, but a spec of what should be implemented by a transport component to support generic service management API like starting and stopping the server.
-
-We would like to abstract this API to be able to re-use the same pipe with different transports.
-
-### Spec
-
-Based on most of the available server implementations we can easily identify the basic APIs that every transport should provide to be used to serve incoming traffic.
-
-The transport implementation should expose this API under generic name 'server:default' which will be used by Trooba when it tries to execute server API
-
-#### Start server API
-
-* Should start the server and return a reference to the server instance to manage it.
-* An optional callback will be called when the server is ready.
-
-```js
-const Trooba = require('trooba');
-const pipe = Trooba.use(transport, {
-    port: 8000
-}).build();
-const server = pipe.create();
-
-// start the service
-const svr = server.listen(() => {
-    console.log('The server is ready');
-});
-```
-
-#### Stop server API
-
-* Becomes available in server instance returned by listen method
-* Accept an optional callback that will be called when server successfully closed all the connections.
-
-```js
-// ...
-// later in-time
-svr.close(() => {
-    console.log('The server is stopped');
-});
-```
-
-#### Example
-
-```js
 'use strict';
 
 /*
@@ -81,7 +35,7 @@ function mockTransport(pipe, config) {
         return {
             listen(callback) {
                 const server =  Http.createServer((req, res) => {
-                    // here for the demo's sake we are not going to generalize
+                    // here for the demo's sake we are not going to generelaize
                     // request and response and handle them as is
                     pipe.create().request(req, (err, response) => {
                         if (err) {
@@ -99,4 +53,3 @@ function mockTransport(pipe, config) {
         };
     });
 }
-```

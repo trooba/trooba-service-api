@@ -1,0 +1,27 @@
+{
+  "name": "trooba-service-api",
+  "version": "0.1.0",
+  "description": "This module is not an implementation, but a spec of what should be implemented by a transport component to support generic service management API like starting and stopping the server.",
+  "main": "example.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trooba/trooba-service-api.git"
+  },
+  "keywords": [
+    "service",
+    "api",
+    "trooba"
+  ],
+  "author": "Dmytro Semenov <dimichsdg@yahoo.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trooba/trooba-service-api/issues"
+  },
+  "homepage": "https://github.com/trooba/trooba-service-api#readme",
+  "devDependencies": {
+    "trooba": "^2.0.2"
+  }
+}
