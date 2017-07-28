@@ -9,7 +9,7 @@ const Http = require('http');
 const Trooba = require('trooba');
 
 const pipe = Trooba
-    .use(mockTransport, {
+    .use(httpServerTransport, {
         port: 8080
     })
     // controller
@@ -28,7 +28,7 @@ server.listen(() => {
     console.log('The server is ready');
 });
 
-function mockTransport(pipe, config) {
+function httpServerTransport(pipe, config) {
     Assert.ok(config.port !== undefined, 'Port must be provided as part of transport config');
 
     pipe.set('server:default', function serverFactory(pipe) {
