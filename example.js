@@ -29,11 +29,10 @@ server.listen(() => {
 });
 
 function httpServerTransport(pipe, config) {
-    Assert.ok(config.port !== undefined, 'Port must be provided as part of transport config');
-
     pipe.set('server:default', function serverFactory(pipe) {
         return {
             listen(callback) {
+                Assert.ok(config.port !== undefined, 'Port must be provided as part of transport config');
                 const server =  Http.createServer((req, res) => {
                     // here for the demo's sake we are not going to generelaize
                     // request and response and handle them as is
