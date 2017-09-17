@@ -1,5 +1,7 @@
 # trooba-service-api
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/trooba/trooba-service-api.svg)](https://greenkeeper.io/)
+
 This module is not an implementation, but a spec of what should be implemented by a transport component to support generic service management API like starting and stopping the server.
 
 We would like to abstract this API to be able to re-use the same pipe with different transports.
