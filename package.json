@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/trooba/trooba-service-api.git"
   },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
+  },
   "keywords": [
     "service",
     "api",
